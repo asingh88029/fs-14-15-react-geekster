@@ -1,0 +1,9 @@
+.black-text{
+    color: black;
+    background-color: yellow;
+}
+
+.div-container {
+    display: flex;
+    justify-content: space-between;
+}
