@@ -21,8 +21,11 @@ const CoursePlanner = () => {
     }
 
     // inside courseData push the object created above
-    const dataToUpdate = [...courseData, newCourseData]; // [1, 2]
-    setterCourseData(dataToUpdate);
+    const data = JSON.parse(JSON.stringify(courseData))
+    data.push(newCourseData)
+    setterCourseData(data);
+    // const dataToUpdate = [...courseData, newCourseData]; // [1, 2]
+    // setterCourseData(dataToUpdate);
   }  
 
   return (
