@@ -3,28 +3,40 @@ import './App.css';
 import '@toast-ui/editor/dist/toastui-editor.css';
 
 import { Editor } from '@toast-ui/react-editor';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 function App() {
 
-  const [name, setName] = useState("");
+  const paragraphRef = useRef(null)
+  const [value, setValue] = useState("Hello")
 
-  useEffect(()=>{
-    const localStorageName = localStorage.getItem("name");
-    if(localStorageName){
-      setName(localStorageName)
-    }
-  }, [])
+  // const [name, setName] = useState("");
+
+  // useEffect(()=>{
+  //   const localStorageName = localStorage.getItem("name");
+  //   if(localStorageName){
+  //     setName(localStorageName)
+  //   }
+  // }, [])
 
   return (
-    <div className="App">
-      <input type='text' value={name} onChange={(e)=>{
-        setName(e.target.value);
-      }}/>
+    <>
+      {/* <div className="App">
+        <input type='text' value={name} onChange={(e)=>{
+          setName(e.target.value);
+        }}/>
+        <button onClick={()=>{
+          localStorage.setItem("name", name)
+        }}>SAVE</button>
+      </div> */}
+      <p>{value}</p>
       <button onClick={()=>{
-        localStorage.setItem("name", name)
-      }}>SAVE</button>
-    </div>
+        // paragraphRef.current.innerText = "Hi"
+        setValue("Hi")
+      }}>Change</button>
+      <button onClick={()=>{
+      }}>Hide</button>
+    </>
   );
 }
 

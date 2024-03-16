@@ -66,8 +66,8 @@ const Home = () => {
             {/* Sliders */}
             <div style={{width: '50%', padding: '0px 10px'}}>
                 <SliderWithInfo title={"Home Value"} symbol={"$"} setValue={setHomeValue} value={homevalue} min={1000} max={10000}/>
-                <SliderWithInfo title={"Down Payment"} symbol={"$"} setValue={setDownPaymentValue} value={downPaymentValue} min={0} max={homevalue}/>
-                <SliderWithInfo title={"Loan Amount"} symbol={"$"} setValue={setLoanAmountValue} value={loanAmountValue} min={0} max={homevalue}/>
+                <SliderWithInfo title={"Down Payment"} symbol={"$"} setValue={setDownPaymentValue} value={homevalue-loanAmountValue} min={0} max={homevalue}/>
+                <SliderWithInfo title={"Loan Amount"} symbol={"$"} setValue={setLoanAmountValue} value={homevalue-downPaymentValue} min={0} max={homevalue}/>
                 <SliderWithInfo title={"Interest Rate"} symbol={"%"} setValue={setInterestValue} value={interestValue} min={2} max={18}/>
                 <Select setTenureParent={setTenureParent}/>
             </div>
